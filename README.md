@@ -5,9 +5,9 @@ in R3. They are useful for rotating objects in 3D.
 
 The basis vectors multiply as such:\
 i^2 = j^2 = k^2 = ijk = -1\
-ij = k   ji = -k\
-jk = i   kj = -i\
-ki = j   ik = -j
+ij = k &emsp; ji = -k\
+jk = i &emsp; kj = -i\
+ki = j &emsp; ik = -j
 
 Additional resources:\
 https://lisyarus.github.io/blog/posts/introduction-to-quaternions.html \
