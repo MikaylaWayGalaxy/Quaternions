@@ -1,3 +1,7 @@
+package Main;
+
+import Quaternion.*;
+
 //***********************************************************************************************//
 // Created by Mikayla Fulmer                                                                     //
 // Last edited 7-24-25                                                                           //

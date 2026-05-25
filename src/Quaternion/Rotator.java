@@ -1,11 +1,13 @@
-//***********************************************************************************************//
-// Uses quaternions to rotate vectors (points in 3d space).                                      //
-// This class contains all static functions allowing rotation in different ways.                 //
-//                                                                                               //
-// If you start at the origin and look along the axis of rotation, a positive angle is clockwise //
-// rotation. For counter-clockwise rotation, use negative angles. This follows the curled finger //
-// right hand rule.                                                                              //
-//***********************************************************************************************//
+package Quaternion;
+
+//***************************************************************************************************//
+// Uses quaternions to rotate vectors (points in 3d space).                                          //
+// This class contains all static functions allowing rotation in different ways.                     //
+//                                                                                                   //
+// If you start at the origin and look along the axis of rotation, a positive angle is clockwise     //
+// rotation. For counter-clockwise rotation, use negative angles. This follows the curled finger     //
+// right hand rule.                                                                                  //
+//***************************************************************************************************//
 public class Rotator
 {
     //rotates a point given an angle of rotation and an axis of rotation

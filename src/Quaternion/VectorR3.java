@@ -1,10 +1,11 @@
-//***********************************************************************************************//
-// 3 dimensional vectors. Also called R^3.                                                       //
-// Often represented as: <a, b, c> = ai + bj + ck                                                //
-// where a,b,c are real numbers and i,j,k are the standard basis vectors for R^3.                //
-// They can also represent points in 3d space if the vectors are assumed to start from the       //
-// origin.                                                                                       //
-//***********************************************************************************************//
+package Quaternion;
+
+//***************************************************************************************************//
+// 3-dimensional vectors containing 3 real numbers. Also called R^3.                                 //
+// Often represented as: <a, b, c> = ai + bj + ck                                                    //
+// where a,b,c are real numbers and i,j,k are the standard basis vectors for R^3.                    //
+// They can also represent points in 3d space if the vectors are assumed to start from the origin.   //
+//***************************************************************************************************//
 public class VectorR3
 {
     //***********************************************************************************************//
@@ -40,7 +41,6 @@ public class VectorR3
         Y = Original.GetY();
         Z = Original.GetZ();
     }
-    //todo: check this
 
 
 
