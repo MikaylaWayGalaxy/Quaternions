@@ -7,9 +7,9 @@ The basis vectors multiply as such:\
 i^2 = j^2 = k^2 = ijk = -1\
 ij = k   ji = -k\
 jk = i   kj = -i\
-ki = j   ik = -j\
+ki = j   ik = -j
 
 Additional resources:\
 https://lisyarus.github.io/blog/posts/introduction-to-quaternions.html \
 https://www.youtube.com/watch?v=d4EgbgTm0Bg \
-https://www.youtube.com/watch?v=htYh-Tq7ZBI \
+https://www.youtube.com/watch?v=htYh-Tq7ZBI
