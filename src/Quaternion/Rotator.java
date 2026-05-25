@@ -10,6 +10,11 @@ package Quaternion;
 //***************************************************************************************************//
 public class Rotator
 {
+    //private constructor, prevents class initialization
+    private Rotator() { /* do nothing */ }
+
+
+
     //rotates a point given an angle of rotation and an axis of rotation
     //see above for rules on the angle and axis
     public static VectorR3 Rotate(VectorR3 Point, double Angle, VectorR3 Axis)
@@ -65,50 +70,6 @@ public class Rotator
 
 
 
-    //rotates in 3d given an angle to rotate around all three standard axes
-    //angles result in clockwise rotation, use negative angles for counter-clockwise rotation
-    //rotates in order: X -> Y -> Z
-    public static VectorR3 RotateXYZ(VectorR3 Point, double AngleX, double AngleY, double AngleZ)
-    {
-        Quaternion QX = RotationQuaternion(AngleX, VectorR3.IHAT());
-        Quaternion QY = RotationQuaternion(AngleY, VectorR3.JHAT());
-        Quaternion QZ = RotationQuaternion(AngleZ, VectorR3.KHAT());
-        Quaternion RotQuat = Quaternion.Multiply3(QZ, QY, QX);          //rotations are applied right to left
-        return Rotate(Point, RotQuat);
-    }
-    //todo: consider making other versions
-
-
-
-    //rotates around all 3 axes smoothly
-    //rotates in order: X -> Y -> Z
-    //breaks into smaller moves
-    //takes in starting point, all 3 angles, and the desired number of moves
-    //returns an array of vectors containing points to move along
-    public static VectorR3[] SmoothRotateXYZ(VectorR3 Point, double AngleX, double AngleY, double AngleZ, int NumMoves)
-    {
-        if (NumMoves < 1)           //input validation: if NumMoves is less than 1, do a single move instead
-            NumMoves = 1;
-        VectorR3[] MoveArray = new VectorR3[NumMoves];
-        double RotAngle;
-        VectorR3 RotAxis;
-        Quaternion QX = RotationQuaternion(AngleX, VectorR3.IHAT());
-        Quaternion QY = RotationQuaternion(AngleY, VectorR3.JHAT());
-        Quaternion QZ = RotationQuaternion(AngleZ, VectorR3.KHAT());
-        Quaternion RotQuat = Quaternion.Multiply3(QZ, QY, QX);          //gets full rotation first
-        RotAngle = AngleOfRot(RotQuat) / NumMoves;                      //extracts angle then divides by NumMoves
-        RotAxis = AxisOfRot(RotQuat);                                   //extracts rotation axis without modifying
-        RotQuat.SetAll(RotationQuaternion(RotAngle, RotAxis));          //rebuilds rotation quaternion with smaller angle
-        for(int i = 0; i < NumMoves; i++)
-        {
-            MoveArray[i] = Rotate(Point, RotQuat);      //save point to array
-            Point = MoveArray[i];                       //update current point
-        }
-        return MoveArray;
-    }
-
-
-
     //rotates a point around the x-axis by a given angle clockwise
     public static VectorR3 RotateXAxis(VectorR3 Point, double Angle)
     {
@@ -149,5 +110,3 @@ public class Rotator
     }
     //todo: check this
 }
-
-//todo: rotate and translate function?

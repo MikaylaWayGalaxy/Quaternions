@@ -2,13 +2,13 @@ package Main;
 
 import Quaternion.*;
 
-//***********************************************************************************************//
-// Created by Mikayla Fulmer                                                                     //
-// Last edited 7-24-25                                                                           //
-//                                                                                               //
-// This programs tests using quaternions to rotate points in 3d space.                           //
-// Outputs points, copy and paste into https://www.desmos.com/3d to visualize.                   //
-//***********************************************************************************************//
+//***************************************************************************************************//
+// Created by Mikayla Fulmer                                                                         //
+// Last edited 7-24-25                                                                               //
+//                                                                                                   //
+// This programs tests using quaternions to rotate points in 3d space.                               //
+// Outputs points, copy and paste into https://www.desmos.com/3d to visualize.                       //
+//***************************************************************************************************//
 public class Quaternions
 {
     static public void main(String[] args)
@@ -38,35 +38,5 @@ public class Quaternions
             Point.SetAll(Moves[i].Add(TransVector));
             System.out.printf("(%.4f, %.4f, %.4f)\n", Point.GetX(), Point.GetY(), Point.GetZ());
         }
-
-        /*
-        //testing smooth 3axis rotation
-        int NumMoves = 24;
-        VectorR3[] Moves = new VectorR3[24];
-
-        System.out.printf("(%.4f, %.4f, %.4f)\n", Point.GetX(), Point.GetY(), Point.GetZ());
-        Moves = Rotator.SmoothRotateXYZ(Point, Math.PI / 2.0, Math.PI / 2.0, 0.0, NumMoves);
-        for(int i = 0; i < NumMoves; i++)
-        {
-            Point.SetAll(Moves[i]);
-            System.out.printf("(%.4f, %.4f, %.4f)\n", Point.GetX(), Point.GetY(), Point.GetZ());
-        }
-
-        //validating accuracy of move
-        VectorR3 Point2 = new VectorR3(1.0, 1.0, 1.0);
-        System.out.printf("\n(%.4f, %.4f, %.4f)\n", Point2.GetX(), Point2.GetY(), Point2.GetZ());
-        Point2.SetAll(Rotator.RotateXAxis(Point2, Math.PI / 2.0));
-        System.out.printf("(%.4f, %.4f, %.4f)\n", Point2.GetX(), Point2.GetY(), Point2.GetZ());
-        Point2.SetAll(Rotator.RotateYAxis(Point2, Math.PI / 2.0));
-        System.out.printf("(%.4f, %.4f, %.4f)\n", Point2.GetX(), Point2.GetY(), Point2.GetZ());
-        */
-
-        /*
-        //testing rotating along all 3 axes
-        System.out.printf("(%.4f, %.4f, %.4f)\n", Point.GetX(), Point.GetY(), Point.GetZ());
-        Point.SetAll(Rotator.RotateXYZ(Point, Math.PI / 2.0, Math.PI / 2.0, 0.0));
-        System.out.printf("(%.4f, %.4f, %.4f)\n", Point.GetX(), Point.GetY(), Point.GetZ());
-        */
-
     }
 }
